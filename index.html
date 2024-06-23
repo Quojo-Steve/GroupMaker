@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">Group Maker</a>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#second" class="nav-link">Create Groups</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="first">
+        <div class="text">
+          <h1>Just Give Us Your List,<br />We Make the Groups</h1>
+          <h3>
+            Submit your list of participants, along with any preferences or
+            criteria you have in mind, and we'll handle the rest. Whether you're
+            organizing a team-building exercise, a classroom activity, or a
+            social event, our system will intelligently group individuals to
+            optimize collaboration and enjoyment.
+          </h3>
+        </div>
+        <img src="./images.png" alt="" />
+        <div class="scroll-arrow" onclick="scrollDown()">&darr;</div>
+      </div>
+
+      <div class="second" id="second">
+        <div class="upload-section" id="uploadSection">
+          <input type="file" id="fileInput" accept=".csv, .txt" />
+          <p>Select either a csv, or txt file</p>
+        </div>
+
+        <div class="parameters">
+            <label for="numGroups">How many groups</label>
+            <input type="number" id="numGroups" min="1" />
+            <label for="groupSize">How many in a group</label>
+            <input type="number" id="groupSize" min="1" />
+            <div class="box">
+              <input type="checkbox" id="ignoreFirstRow" />
+              <label for="ignoreFirstRow">Ignore first row</label>
+            </div>
+            <button onclick="generateGroups()">Done</button>
+            <small>NB: The number of Groups is considered first over the Group Size</small>
+          </div>
+          
+      </div>
+
+      <div id="results" class="results">
+        <!-- Results will be displayed here -->
+      </div>
+      <button onclick="downloadResults()">Download Results</button>
+      <footer>
+        <div class="footer-content">
+          <p>
+            For website solutions contact <a href="tel:+233243673038">+233243673038</a> or email
+            <a href="mailto:quojosteve@gmail.com">quojosteve@gmail.com</a>
+          </p>
+        </div>
+        <form id="contactForm">
+          <label for="message">Send a Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Type your message here..."
+            rows="4"
+            required
+          ></textarea>
+          <button class="send" type="submit">Send</button>
+        </form>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
